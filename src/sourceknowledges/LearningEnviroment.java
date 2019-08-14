@@ -12,11 +12,11 @@ public class LearningEnviroment {
         int nroObstaculos = 0;
         int posicion = 0;
 
-        System.out.println("Ingrese número de obstaculos alrededor del robot (min:0|max:4)");
+        System.out.println("Ingrese número de obstaculos alrededor del robot (min:0|max:4; si no se ingresa un número de obstaculos valido se tomara como 0)");
         System.out.print("Nro. Obstaculos = ");
         nroObstaculos = input.nextInt();
         //
-        if (nroObstaculos!=0) {
+        if (nroObstaculos!=0 && nroObstaculos<5 && nroObstaculos>=0) {
             System.out.println("|---------|");
             System.out.println("|    1    |");
             System.out.println("|2   R   3|");
@@ -34,9 +34,12 @@ public class LearningEnviroment {
                 }else if(Main.enviroment.ubicaRobot[0] == 4 && posicion==4){
                     System.out.println("Ubicación invalida");
                     i = i-1;
-                }else if(Main.enviroment.ubicaRobot[1] == 4 && posicion==3){
+                }else if(Main.enviroment.ubicaRobot[1] == 4 && posicion==3) {
                     System.out.println("Ubicación invalida");
-                    i = i-1;
+                    i = i - 1;
+                }else if(posicion!=1 && posicion!=2 && posicion!=3 && posicion!=4){
+                    System.out.println("Ubicación invalida");
+                    i = i - 1;
                 }else{
                     update_enviroment(posicion);
                 }

@@ -45,7 +45,10 @@ public class Move {
 
         Collections.sort(arreglo);
 
-        if(arreglo.get(0).equals(posicion_sig1)){
+        if(arreglo.isEmpty()){
+            System.out.println("El robot no tiene movimientos posibles");
+        }
+        else if(arreglo.get(0).equals(posicion_sig1)){
             move_up();
         }else if(arreglo.get(0).equals(posicion_sig2)){
             move_right();
